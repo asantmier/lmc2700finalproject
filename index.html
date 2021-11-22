@@ -2,11 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Farming Simulator</title>
+    <style>
+        #gameScreen {
+            border: 1px solid black;
+        }
+        img {
+            display: none;
+        }
+    </style>
 </head>
 <body>
+    <!------------------------------------- IMAGES ------------------------------------->
+    <!-- add images here and reference them in js by their id-->
+    <img id="img_circle" src="assets/images/circle.png">
+    <img id="img_square" src="assets/images/square.png">
+    <img id="img_square_outline" src="assets/images/square_outline.png">
+    <img id="img_square_outline_filled" src="assets/images/square_outline_filled.png">
+
+    <!------------------------------------- CANVAS ------------------------------------->
+    <canvas id="gameScreen" width="800" height="600"></canvas>
     
+    <!---------------------------------- MAIN SCRIPT ----------------------------------->
+    <script type="module" src="src/index.js"></script>
 </body>
 </html>
