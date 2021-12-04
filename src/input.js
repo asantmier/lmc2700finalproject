@@ -76,13 +76,20 @@ export default class InputHandler {
             })
         })
 
+        // Some quick priveledged methods to help out below
         this.selectTool = function(id) {
+            // Reset border styling
             document.getElementById(this.toolSlot).style.border = "none"
             document.getElementById(this.invSlot).style.border = "none"
+            // Reset selected things
             this.toolSlot = "tool0"
             this.invSlot = "inv0"
+            // Select thing
             this.toolSlot = id;
+            // Apply styling
             document.getElementById(this.toolSlot).style.border = "1px solid white"
+            // Clear item name display
+            document.getElementById("itemName").innerText = ""
         }
 
         this.selectInv = function(id) {
@@ -92,8 +99,11 @@ export default class InputHandler {
             this.invSlot = "inv0"
             this.invSlot = id;
             document.getElementById(this.invSlot).style.border = "1px solid white"
+            // Set item name display
+            document.getElementById("itemName").innerText = document.getElementById(this.invSlot + "name").innerText
         }
 
+        // Selecting Tools
         document.getElementById("tool1").addEventListener('click', event => {
             this.selectTool("tool1")
         })
@@ -104,6 +114,7 @@ export default class InputHandler {
             this.selectTool("tool3")
         })
 
+        // Selecting Items
         document.getElementById("inv1").addEventListener('click', event =>  {
             this.selectInv("inv1")
         })

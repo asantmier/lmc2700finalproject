@@ -80,16 +80,20 @@
 
     <!------------------------------------- CANVAS ------------------------------------->
     <canvas id="gameScreen" width="800" height="600" style="padding: 0px; margin: 0px;"></canvas>
+
+    <!-------------------------------------- HUD --------------------------------------->
     <div class="hud" style="background-color: lightslategrey;">
         <div class="info">
             <p id="time" style="bottom: 5px; left: 5px;">Day 1  17:00</p>
             <p id="money" style="bottom: 5px; left: 140px;">$1000</p>
+            <p id="itemName" style="top: 20px; left: 210px; width: 135px; text-align: right;"></p>
         </div>
         <div class="tools">
-            <img id="tool0" src="" style="top: 5px; left: 5px;">
-            <img id="tool0sprite" class="sprite" src="" style="top: 10px; left: 10px;">
-            <p id="tool0name" style="top: 50px; left: 5px;"><b></b></p>
-            
+            <!-- Dummy tool -->
+            <img id="tool0" src="" style="display: none;">
+            <img id="tool0sprite" class="sprite" src="" style="display: none;">
+            <p id="tool0name" style="display: none;"></p>
+
             <img id="tool1" src="assets/images/square_outline_filled.png" style="top: 5px; left: 5px;">
             <img id="tool1sprite" class="sprite" src="assets/images/circle.png" style="top: 10px; left: 10px;">
             <p id="tool1name" style="top: 50px; left: 5px;"><b>Planter</b></p>
@@ -101,71 +105,93 @@
             <p id="tool3name" style="top: 50px; left: 145px;"><b>Harvest</b></p>
         </div>
         <div class="inventory">
-            <img id="inv0" src="" style="top: 5px; left: 350px;">
-            <img id="inv0sprite" class="sprite" src="" style="top: 7px; left: 352px;">
-            <p id="inv0count" style="top: 33px; left: 350px;"></p>
+            <!-- Dummy item -->
+            <img id="inv0" src="" style="display: none;">
+            <img id="inv0sprite" class="sprite" src="" style="display: none;">
+            <p id="inv0count" style="display: none;"></p>
+            <p id="inv0name" style="display: none;"></p>
 
             <img id="inv1" src="assets/images/square_outline_filled.png" style="top: 5px; left: 350px;">
             <img id="inv1sprite" class="sprite" src="assets/images/empty.png" style="top: 7px; left: 352px;">
             <p id="inv1count" style="top: 33px; left: 350px;"></p>
+            <p id="inv1name" style="display: none;"></p>
             <img id="inv2" src="assets/images/square_outline_filled.png" style="top: 5px; left: 395px;">
             <img id="inv2sprite" class="sprite" src="assets/images/empty.png" style="top: 7px; left: 397px;">
             <p id="inv2count" style="top: 33px; left: 395px;"></p>
+            <p id="inv2name" style="display: none;"></p>
             <img id="inv3" src="assets/images/square_outline_filled.png" style="top: 5px; left: 440px;">
             <img id="inv3sprite" class="sprite" src="assets/images/empty.png" style="top: 7px; left: 442px;">
             <p id="inv3count" style="top: 33px; left: 440px;"></p>
+            <p id="inv3name" style="display: none;"></p>
             <img id="inv4" src="assets/images/square_outline_filled.png" style="top: 5px; left: 485px;">
             <img id="inv4sprite" class="sprite" src="assets/images/empty.png" style="top: 7px; left: 487px;">
             <p id="inv4count" style="top: 33px; left: 485px;"></p>
+            <p id="inv4name" style="display: none;"></p>
             <img id="inv5" src="assets/images/square_outline_filled.png" style="top: 5px; left: 530px;">
             <img id="inv5sprite" class="sprite" src="assets/images/empty.png" style="top: 7px; left: 532px;">
             <p id="inv5count" style="top: 33px; left: 530px;"></p>
+            <p id="inv5name" style="display: none;"></p>
             <img id="inv6" src="assets/images/square_outline_filled.png" style="top: 5px; left: 575px;">
             <img id="inv6sprite" class="sprite" src="assets/images/empty.png" style="top: 7px; left: 577px;">
             <p id="inv6count" style="top: 33px; left: 575px;"></p>
+            <p id="inv6name" style="display: none;"></p>
             <img id="inv7" src="assets/images/square_outline_filled.png" style="top: 5px; left: 620px;">
             <img id="inv7sprite" class="sprite" src="assets/images/empty.png" style="top: 7px; left: 622px;">
             <p id="inv7count" style="top: 33px; left: 620px;"></p>
+            <p id="inv7name" style="display: none;"></p>
             <img id="inv8" src="assets/images/square_outline_filled.png" style="top: 5px; left: 665px;">
             <img id="inv8sprite" class="sprite" src="assets/images/empty.png" style="top: 7px; left: 667px;">
             <p id="inv8count" style="top: 33px; left: 665px;"></p>
+            <p id="inv8name" style="display: none;"></p>
             <img id="inv9" src="assets/images/square_outline_filled.png" style="top: 5px; left: 710px;">
             <img id="inv9sprite" class="sprite" src="assets/images/empty.png" style="top: 7px; left: 712px;">
             <p id="inv9count" style="top: 33px; left: 710px;"></p>
+            <p id="inv9name" style="display: none;"></p>
             <img id="inv10" src="assets/images/square_outline_filled.png" style="top: 5px; left: 755px;">
             <img id="inv10sprite" class="sprite" src="assets/images/empty.png" style="top: 7px; left: 757px;">
             <p id="inv10count" style="top: 33px; left: 755px;"></p>
+            <p id="inv10name" style="display: none;"></p>
 
             <img id="inv11" src="assets/images/square_outline_filled.png" style="top: 55px; left: 350px;">
             <img id="inv11sprite" class="sprite" src="assets/images/empty.png" style="top: 57px; left: 352px;">
             <p id="inv11count" style="top: 83px; left: 350px;"></p>
+            <p id="inv11name" style="display: none;"></p>
             <img id="inv12" src="assets/images/square_outline_filled.png" style="top: 55px; left: 395px;">
             <img id="inv12sprite" class="sprite" src="assets/images/empty.png" style="top: 57px; left: 397px;">
             <p id="inv12count" style="top: 83px; left: 395px;"></p>
+            <p id="inv12name" style="display: none;"></p>
             <img id="inv13" src="assets/images/square_outline_filled.png" style="top: 55px; left: 440px;">
             <img id="inv13sprite" class="sprite" src="assets/images/empty.png" style="top: 57px; left: 442px;">
             <p id="inv13count" style="top: 83px; left: 440px;"></p>
+            <p id="inv13name" style="display: none;"></p>
             <img id="inv14" src="assets/images/square_outline_filled.png" style="top: 55px; left: 485px;">
             <img id="inv14sprite" class="sprite" src="assets/images/empty.png" style="top: 57px; left: 487px;">
             <p id="inv14count" style="top: 83px; left: 485px;"></p>
+            <p id="inv14name" style="display: none;"></p>
             <img id="inv15" src="assets/images/square_outline_filled.png" style="top: 55px; left: 530px;">
             <img id="inv15sprite" class="sprite" src="assets/images/empty.png" style="top: 57px; left: 532px;">
             <p id="inv15count" style="top: 83px; left: 530px;"></p>
+            <p id="inv15name" style="display: none;"></p>
             <img id="inv16" src="assets/images/square_outline_filled.png" style="top: 55px; left: 575px;">
             <img id="inv16sprite" class="sprite" src="assets/images/empty.png" style="top: 57px; left: 577px;">
             <p id="inv16count" style="top: 83px; left: 575px;"></p>
+            <p id="inv16name" style="display: none;"></p>
             <img id="inv17" src="assets/images/square_outline_filled.png" style="top: 55px; left: 620px;">
             <img id="inv17sprite" class="sprite" src="assets/images/empty.png" style="top: 57px; left: 622px;">
             <p id="inv17count" style="top: 83px; left: 620px;"></p>
+            <p id="inv17name" style="display: none;"></p>
             <img id="inv18" src="assets/images/square_outline_filled.png" style="top: 55px; left: 665px;">
             <img id="inv18sprite" class="sprite" src="assets/images/empty.png" style="top: 57px; left: 667px;">
             <p id="inv18count" style="top: 83px; left: 665px;"></p>
+            <p id="inv18name" style="display: none;"></p>
             <img id="inv19" src="assets/images/square_outline_filled.png" style="top: 55px; left: 710px;">
             <img id="inv19sprite" class="sprite" src="assets/images/empty.png" style="top: 57px; left: 712px;">
             <p id="inv19count" style="top: 83px; left: 710px;"></p>
+            <p id="inv19name" style="display: none;"></p>
             <img id="inv20" src="assets/images/square_outline_filled.png" style="top: 55px; left: 755px;">
             <img id="inv20sprite" class="sprite" src="assets/images/empty.png" style="top: 57px; left: 757px;">
             <p id="inv20count" style="top: 83px; left: 755px;"></p>
+            <p id="inv20name" style="display: none;"></p>
         </div>
     </div>
     

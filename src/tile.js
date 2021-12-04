@@ -15,6 +15,7 @@ export default class Tile {
         if(tool === "tool1") {
             this.image = document.getElementById('img_square_outline_filled')
         }
+        
     }
 
     update(dt) {
