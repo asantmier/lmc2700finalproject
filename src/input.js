@@ -45,12 +45,19 @@ export default class InputHandler {
             let x = event.x - rect.left
             let y = event.y - rect.top
             game.tiles.some((tile) => {
+                // Check if tile is at click position
                 if(tile.position.x <= x &&
                     tile.position.x + tile.width >= x &&
                     tile.position.y <= y &&
                     tile.position.y + tile.height >= y
                 ) {
-                    tile.clicked()
+                    // Check if tile is in range of player
+                    if(Math.abs(tile.position.x - player.position.x) <= 3.5 * tile.width &&
+                        Math.abs(tile.position.y - player.position.y) <= 3.5 * tile.height
+                    ) {
+                        tile.clicked()
+                    }
+                    // Break from some() early
                     return true
                 } else {
                     return false

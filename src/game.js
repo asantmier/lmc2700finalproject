@@ -3,6 +3,7 @@ import InputHandler from './input.js'
 import Tile from './tile.js'
 
 export default class Game {
+    // It could take HUD start height, and height as well TODO
     constructor(gameWidth, gameHeight, canvas) {
         this.gameWidth = gameWidth
         this.gameHeight = gameHeight
