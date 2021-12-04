@@ -7,21 +7,84 @@
         #gameScreen {
             border: 1px solid black;
         }
-        img {
+        .preload {
             display: none;
+        }
+        .hud {
+            min-height: 100px;
+            max-height: 100px;
+            min-width: 800px;
+            max-width: 800px;
+            padding: 0px;
+            margin: 0px;
+            border: 1px solid black;
+            position: absolute;
+            top: 610px;
+        }
+        .inventory img {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+        }
+        .tools img {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+        }
+        .info p {
+            position: absolute;
+            margin: 0px;
+            padding: 0px;
+            font-family: Helvetica, Arial, sans-serif
         }
     </style>
 </head>
 <body>
     <!------------------------------------- IMAGES ------------------------------------->
     <!-- add images here and reference them in js by their id-->
-    <img id="img_circle" src="assets/images/circle.png">
-    <img id="img_square" src="assets/images/square.png">
-    <img id="img_square_outline" src="assets/images/square_outline.png">
-    <img id="img_square_outline_filled" src="assets/images/square_outline_filled.png">
+    <div class="preload">
+        <img id="img_circle" src="assets/images/circle.png">
+        <img id="img_square" src="assets/images/square.png">
+        <img id="img_square_outline" src="assets/images/square_outline.png">
+        <img id="img_square_outline_filled" src="assets/images/square_outline_filled.png">   
+    </div>
 
     <!------------------------------------- CANVAS ------------------------------------->
-    <canvas id="gameScreen" width="800" height="600"></canvas>
+    <canvas id="gameScreen" width="800" height="600" style="padding: 0px; margin: 0px;"></canvas>
+    <div class="hud" style="background-color: lightslategrey;">
+        <div class="info">
+            <p id="time" style="bottom: 5px; left: 5px;">Day 1  17:00</p>
+            <p id="money" style="bottom: 5px; left: 140px;">$1000</p>
+        </div>
+        <div class="tools">
+            <img id="tool1" src="assets/images/square_outline_filled.png" style="top: 5px; left: 5px;">
+            <img id="tool2" src="assets/images/square_outline_filled.png" style="top: 5px; left: 75px;">
+            <img id="tool3" src="assets/images/square_outline_filled.png" style="top: 5px; left: 145px;">
+        </div>
+        <div class="inventory">
+            <img id="inv1" src="assets/images/square_outline_filled.png" style="top: 5px; left: 350px;">
+            <img id="inv2" src="assets/images/square_outline_filled.png" style="top: 5px; left: 395px;">
+            <img id="inv3" src="assets/images/square_outline_filled.png" style="top: 5px; left: 440px;">
+            <img id="inv4" src="assets/images/square_outline_filled.png" style="top: 5px; left: 485px;">
+            <img id="inv5" src="assets/images/square_outline_filled.png" style="top: 5px; left: 530px;">
+            <img id="inv6" src="assets/images/square_outline_filled.png" style="top: 5px; left: 575px;">
+            <img id="inv7" src="assets/images/square_outline_filled.png" style="top: 5px; left: 620px;">
+            <img id="inv8" src="assets/images/square_outline_filled.png" style="top: 5px; left: 665px;">
+            <img id="inv9" src="assets/images/square_outline_filled.png" style="top: 5px; left: 710px;">
+            <img id="inv10" src="assets/images/square_outline_filled.png" style="top: 5px; left: 755px;">
+
+            <img id="inv11" src="assets/images/square_outline_filled.png" style="top: 55px; left: 350px;">
+            <img id="inv12" src="assets/images/square_outline_filled.png" style="top: 55px; left: 395px;">
+            <img id="inv13" src="assets/images/square_outline_filled.png" style="top: 55px; left: 440px;">
+            <img id="inv14" src="assets/images/square_outline_filled.png" style="top: 55px; left: 485px;">
+            <img id="inv15" src="assets/images/square_outline_filled.png" style="top: 55px; left: 530px;">
+            <img id="inv16" src="assets/images/square_outline_filled.png" style="top: 55px; left: 575px;">
+            <img id="inv17" src="assets/images/square_outline_filled.png" style="top: 55px; left: 620px;">
+            <img id="inv18" src="assets/images/square_outline_filled.png" style="top: 55px; left: 665px;">
+            <img id="inv19" src="assets/images/square_outline_filled.png" style="top: 55px; left: 710px;">
+            <img id="inv20" src="assets/images/square_outline_filled.png" style="top: 55px; left: 755px;">
+        </div>
+    </div>
     
     <!---------------------------------- MAIN SCRIPT ----------------------------------->
     <script type="module" src="src/index.js"></script>
