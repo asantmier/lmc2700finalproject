@@ -13,6 +13,7 @@ export default class Game {
         this.gameObjects = []
 
         new InputHandler(this.player, this, canvas)
+        this.addItem("assets/images/circle.png", 3)
     }
 
     start() {
@@ -37,5 +38,17 @@ export default class Game {
 
     draw(ctx) {
         this.gameObjects.forEach((object) => object.draw(ctx))
+    }
+
+    addItem(sprite, count) {
+        for(let i = 1; i <= 20; i++) {
+            let ct = document.getElementById("inv" + i + "count").innerText
+            if(ct === "") {
+                document.getElementById("inv" + i + "count").innerText = count
+                document.getElementById("inv" + i + "sprite").src = sprite
+                break
+            }
+        }
+        
     }
 }

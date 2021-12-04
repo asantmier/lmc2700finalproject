@@ -28,6 +28,3 @@ function gameLoop(timestamp) {
 // Start our loop on the first frame the browser gives us
 requestAnimationFrame(gameLoop)
 
-function invSelect(id) {
-    console.log("gaming")
-}

@@ -11,8 +11,10 @@ export default class Tile {
         this.position = position
     }
 
-    clicked() {
-        this.image = document.getElementById('img_square_outline_filled')
+    clicked(tool, item) {
+        if(tool === "tool1") {
+            this.image = document.getElementById('img_square_outline_filled')
+        }
     }
 
     update(dt) {
