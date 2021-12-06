@@ -14,6 +14,8 @@ export default class Game {
         this.gameObjects = []
         this.time = 60 * 7
         this.day = 1
+        this.money = 1000
+        document.getElementById("money").innerText = "$" + this.money
 
         new InputHandler(this.player, this, canvas)
         this.addItem(6, 'plant', 'seed')
@@ -64,6 +66,12 @@ export default class Game {
         this.day++
         this.time = 60 * 7
         this.tiles.forEach((tile) => tile.grow())
+    }
+
+    // Gives money to the player
+    giveMoney(amount) {
+        this.money += amount
+        document.getElementById("money").innerText = "$" + this.money
     }
 
     // Adds an item to the inventory
