@@ -10,7 +10,7 @@ let lookup = {
     plant: {
         seed: {
             name: "Plant Seed",
-            sprite: "assets/images/plant_seed.png",
+            sprite: "assets/images/seed.png",
             cost: 10,
             sell: 5,
         },
