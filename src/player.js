@@ -51,7 +51,6 @@ export default class Player {
     }
 
     update(dt) {
-        console.log(dt)
         // Divide by 1000 so that speed can be in pixels per second
         this.position.x += this.speed.x * (dt / 1000)
         this.position.y += this.speed.y * (dt / 1000)
