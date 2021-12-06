@@ -19,6 +19,7 @@ function gameLoop(timestamp) {
 
     ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT)
 
+    // IMPORTANT dt is in milliseconds, not seconds!
     game.update(dt)
     game.draw(ctx)
 

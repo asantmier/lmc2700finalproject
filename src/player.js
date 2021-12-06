@@ -9,7 +9,8 @@ export default class Player {
         this.width = 50
         this.height = 50
 
-        this.maxSpeed = 16
+        // Speed is in pixels per second
+        this.maxSpeed = 300
         this.speed = {
             x: 0,
             y: 0,
@@ -50,8 +51,10 @@ export default class Player {
     }
 
     update(dt) {
-        this.position.x += this.speed.x / dt
-        this.position.y += this.speed.y / dt
+        console.log(dt)
+        // Divide by 1000 so that speed can be in pixels per second
+        this.position.x += this.speed.x * (dt / 1000)
+        this.position.y += this.speed.y * (dt / 1000)
         
         // Keep the player inside the screen (for now)
         if (this.position.x < 0) this.position.x = 0
