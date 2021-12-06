@@ -112,6 +112,7 @@ export default class Game {
                     document.getElementById("inv" + i + "name").innerText = ""
                     document.getElementById("inv" + i + "parent").innerText = ""
                     document.getElementById("inv" + i + "type").innerText = ""
+                    document.getElementById("itemName").innerText = ""
                 }
                 break
             }
