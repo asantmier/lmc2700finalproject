@@ -239,6 +239,9 @@ export default class InputHandler {
                 if(parent !== '') {
                     game.addItem(1, parent, type)
                     game.giveMoney(-lookup[parent][type].cost)
+                    // This does the same thing as reopening the shop and selecting the sell item. Slow but it works
+                    this.populateSellMenu()
+                    this.selectSell(this.sellSlot)
                 }
             }
         })
