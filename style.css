@@ -1,0 +1,19 @@
+.container {
+    position: relative;
+    width: 60%;
+}
+
+.container img {
+    width: 100%;
+    height: auto;
+}
+
+.container .btn {
+    position: absolute;
+    top: 52.5%;
+    left: 71%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    font-size: 12px;
+    padding: 8px 15px;
+}
