@@ -3,116 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Farming Simulator</title>
-    <style>
-        #gameScreen {
-            border: 1px solid black;
-        }
-        p {
-            user-select: none;
-        }
-        .preload {
-            display: none;
-        }
-        .hud {
-            min-height: 100px;
-            max-height: 100px;
-            min-width: 800px;
-            max-width: 800px;
-            padding: 0px;
-            margin: 0px;
-            border: 1px solid black;
-            position: absolute;
-            top: 610px;
-            /* This prevents the user from highlighting anything */
-            user-select: none;
-        }
-        .hud img {
-            /* This prevents the user from dragging images in most browsers */
-            -webkit-user-drag: none;
-        }
-        .hud p {
-            margin: 0px;
-            padding: 0px;
-            font-family: Helvetica, Arial, sans-serif;
-        }
-        .inventory img, .modal img {
-            width: 40px;
-            height: 40px;
-            position: absolute;
-        }
-        .inventory .sprite, .modal .sprite {
-            width: 36px;
-            height: 36px;
-            pointer-events: none;
-        }
-        .inventory p, .modal p {
-            position: absolute;
-            user-select: none;
-            pointer-events: none;
-            text-align: center;
-            width: 40px;
-        }
-        .tools img {
-            width: 60px;
-            height: 60px;
-            position: absolute;
-        }
-        .tools .sprite {
-            width: 50px;
-            height: 50px;
-            pointer-events: none;
-        }
-        .tools p {
-            position: absolute;
-            pointer-events: none;
-            text-align: center;
-            width: 60px;
-        }
-        .info p {
-            position: absolute;
-            margin: 0px;
-            padding: 0px;
-            font-family: Helvetica, Arial, sans-serif;
-        }
-        .info button, .modal button {
-            position: absolute;
-            margin: 0px;
-            padding: 2px 10px;
-            font-family: Helvetica, Arial, sans-serif;
-            font-size: 20px;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 88px;
-            top: 88px;
-            width: 640px;
-            height: 440px;
-            background-color: slategray;
-            border: 2px solid black;
-        }
-        .sell p {
-            position: absolute;
-            text-align: left;
-            width: auto;
-            margin: 0px;
-            padding: 0px;
-            font-family: Helvetica, Arial, sans-serif;
-        }
-        .close {
-            color: seashell;
-            padding-right: 10px;
-            float: right;
-            font-size: 40px;
-            font-weight: bold;
-        }
-        .close:hover, .close:focus {
-            text-shadow: 0 0 5px red;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" type ="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400&family=Orbitron:wght@400;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!------------------------------------- IMAGES ------------------------------------->
@@ -146,7 +39,7 @@
                 <!-- Dummy sell slot -->
                 <img id="sellinv0" src="" style="display: none;">
                 <img id="sellinv0sprite" class="sprite" src="" style="display: none;">
-                <p id="sellinv0count" style="display: none;"></p>
+                <p id="sellinv0count" class="sellingCount" style="display: none;"></p>
                 <p id="sellinv0name" style="display: none;"></p>
                 <p id="sellinv0parent" style="display: none;"></p>
                 <p id="sellinv0type" style="display: none;"></p>
@@ -278,8 +171,8 @@
                 <p id="sellValue" style="position: relative; text-align: right; float: right;">Price</p>
                 <input id="sellSlider" class="slider" type="range" min="1" max="1" value="1" style="display: block; margin-left: auto; margin-right: auto; margin-top: 20px;">
                 <p id="sellSliderText" style="position: absolute; top: 20px; left: 244px;">#</p>
-                <button id="sellBtn" type="button" style="top:40px; left: 122px">Sell</button>
-                <p id="sellMoneyText" style="top:47px; left: 182px; color: lawngreen; text-shadow: 0 0 2px black;">$0</p>
+                <button id="sellBtn" class="btn" type="button" style="top:40px; left: 122px">Sell</button>
+                <p id="sellMoneyText" style="top:47px; left: 182px; color: #8BFAF1; text-shadow: 0 0 2px black;">$0</p>
             </div>
             <div style="position: absolute; top: 220px; left: -300px;">
                 <!-- Dummy buy slot -->
@@ -459,14 +352,14 @@
             <div class="sell" style="position: absolute; top: 275px; right: 15px; width: 115px; height: 160px; background-color: slategray;">
                 <p id="buyName" style="position: relative; text-align: center; margin: 5px 0;">Item</p>
                 <p id="buyValue" style="position: relative; text-align: center; margin: 5px 0;">Price</p>
-                <button id="buyBtn" type="button" style="position: relative; display: block; margin-right: auto; margin-left: auto;">Buy</button>
+                <button id="buyBtn" class="btn" type="button" style="position: relative; display: block; margin-right: auto; margin-left: auto;">Buy</button>
             </div>
         </div>
         <div class="info">
             <p id="time" style="bottom: 5px; left: 5px;">Day 1 17:00</p>
             <p id="money" style="bottom: 5px; left: 140px;">$1000</p>
             <p id="itemName" style="top: 20px; left: 210px; width: 135px; text-align: right;"></p>
-            <button id="shopBtn" type="button" style="top:65px; left: 240px">Shop</button>
+            <button id="shopBtn" class="btn" type="button" style="top:65px; left: 240px;">Shop</button>
         </div>
         <div class="tools">
             <!-- Dummy tool -->
@@ -476,13 +369,13 @@
 
             <img id="tool1" src="assets/images/square_outline_filled.png" style="top: 5px; left: 5px;">
             <img id="tool1sprite" class="sprite" src="assets/images/planter.png" style="top: 10px; left: 10px;">
-            <p id="tool1name" style="top: 50px; left: 5px;"><b>Planter</b></p>
+            <p id="tool1name" class="toolName" style="top: 50px; left: 5px;"><b>Planter</b></p>
             <img id="tool2" src="assets/images/square_outline_filled.png" style="top: 5px; left: 75px;">
             <img id="tool2sprite" class="sprite" src="assets/images/watering_can.png" style="top: 10px; left: 80px;">
-            <p id="tool2name" style="top: 50px; left: 75px;"><b>Water</b></p>
+            <p id="tool2name" class="toolName" style="top: 50px; left: 75px;"><b>Water</b></p>
             <img id="tool3" src="assets/images/square_outline_filled.png" style="top: 5px; left: 145px;">
             <img id="tool3sprite" class="sprite" src="assets/images/basket.png" style="top: 10px; left: 150px;">
-            <p id="tool3name" style="top: 50px; left: 145px;"><b>Harvest</b></p>
+            <p id="tool3name" class="toolName" style="top: 50px; left: 145px;"><b>Harvest</b></p>
         </div>
         <div class="inventory">
             <!-- Dummy item -->
