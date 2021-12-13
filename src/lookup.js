@@ -16,7 +16,7 @@ let lookup = {
         },
         product: {
             name: "Plant Flower",
-            sprite: "assets/images/plant_product.png",
+            sprite: "assets/images/plant_stage_3.png",
             sell: 15,
         },
         growthStages: {

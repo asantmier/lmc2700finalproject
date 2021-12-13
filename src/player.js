@@ -1,7 +1,7 @@
 export default class Player {
 
     constructor(game) {
-        this.image = document.getElementById('img_circle')
+        this.image = document.getElementById('player_front')
 
         this.gameWidth = game.gameWidth
         this.gameHeight = game.gameHeight
@@ -24,18 +24,22 @@ export default class Player {
 
     moveLeft() {
         this.speed.x = -this.maxSpeed
+        this.image = document.getElementById('player_left')
     }
 
     moveRight() {
         this.speed.x = this.maxSpeed
+        this.image = document.getElementById('player_right')
     }
 
     moveUp() {
         this.speed.y = -this.maxSpeed
+        this.image = document.getElementById('player_back')
     }
 
     moveDown() {
         this.speed.y = this.maxSpeed
+        this.image = document.getElementById('player_front')
     }
 
     stopx() {
