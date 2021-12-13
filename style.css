@@ -168,3 +168,7 @@ p {
     text-decoration: none;
     cursor: pointer;
 }
+
+button:hover {
+    background-color: #8BFAF1;
+}
