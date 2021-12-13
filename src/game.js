@@ -14,7 +14,7 @@ export default class Game {
         this.gameObjects = []
         this.time = 60 * 7
         this.day = 1
-        this.money = 1000
+        this.money = 100
         document.getElementById("money").innerText = "$" + this.money
 
         new InputHandler(this.player, this, canvas)

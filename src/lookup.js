@@ -17,7 +17,7 @@ let lookup = {
         product: {
             name: "Plant Flower",
             sprite: "assets/images/plant_product.png",
-            sell: 100,
+            sell: 15,
         },
         growthStages: {
             stage1: document.getElementById("plant_stage_1"),
@@ -29,7 +29,7 @@ let lookup = {
         stages: 3,
         randomGrowth: 0.80,
         minYield: 1,
-        maxYield: 4,
+        maxYield: 3,
     },
   /*plantName: {
         seed: {
